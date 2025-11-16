@@ -200,22 +200,34 @@ h2 {
 
 
 /* --- SECCIÓN SEPARADORA CON BANNER2 --- */
-/* --- SECCIÓN SEPARADORA TRIPLE (SIN RECORTES) --- */
 .banner-separador {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    padding: 0;
+    margin-top: 80px;
+
     display: flex;
-    justify-content: center;   /* centra TODO el conjunto */
-    align-items: center;
-    gap: 0;                    /* SIN separación */
-    margin-top: 80px;          /* separación respecto a la sección superior */
+    justify-content: center;    /* << CENTRA el contenido */
 }
 
-/* Las imágenes: MISMA ALTURA, SIN RECORTE, PEGADAS */
-.banner-separador .banner-img {
-    height: 40vh;              /* MISMA altura para todas */
-    width: auto;               /* mantiene proporción */
-    object-fit: contain;       /* NO se recortan */
-    flex-shrink: 0;            /* evita que se deformen */
-    display: block;
+/* --- Contenedor interno centrado --- */
+.banner-inner {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+/* --- Las imágenes --- */
+.banner-inner .banner-img {
+    height: 40vh;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 /* --- ESTILOS PARA EL LAYOUT DE INFO --- */
 .top-layout-grid {
@@ -268,8 +280,6 @@ h2 {
 
 
 /* --- SECCIÓN REGLAS DE CLASE --- */
-
-
 .reglas-mini {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -364,5 +374,16 @@ footer {
     }
     .hero-content h1 {
         font-size: 2.2rem;
+    }
+}
+@media (max-width: 768px) {
+    /* Hero más bajo en móvil */
+    .hero {
+        height: 60vh;      /* en vez de 100vh */
+    }
+
+    /* Collage algo más pequeño en móvil para que no sea tan dominante */
+    .banner-separador .banner-img {
+        height: 30vh;
     }
 }
