@@ -425,7 +425,6 @@ footer {
 }
 @media (max-width: 600px) {
 
-    /* Evitar que se amontonen las características del barco en móvil */
     .spec-table {
         width: 100%;
         border-top: none;
@@ -444,7 +443,7 @@ footer {
         padding: 3px 0;
         border-bottom: none;
         text-align: left;
-        word-break: break-word;   /* por si el texto es largo */
+        word-break: break-word;
     }
 
     .spec-table td:first-child {
