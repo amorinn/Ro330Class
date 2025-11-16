@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglamento Ro330 Class</title>
+
+    <!-- Reutiliza tu hoja de estilos principal -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Estilos específicos para reglamento -->
+    <style>
+        /* Hero específico del reglamento */
+        .reglamento-hero {
+            height: 40vh;
+            min-height: 260px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background-image: url('bannerR.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .reglamento-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 0;
+        }
+
+        .reglamento-hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .reglamento-hero-content h1 {
+            color: #ffffff;
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+        .area-box {
+    border: 1px solid #000;
+    padding: 10px 15px;
+    margin: 8px 0 18px 0;
+    display: inline-block;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+}
+
+
+.embarcacion-box {
+    border: 1px solid #000;
+    padding: 12px 16px;
+    margin: 15px auto 25px auto;
+    max-width: 500px;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+}
+
+.embarcacion-box-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+}
+
+.embarcacion-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.embarcacion-row:last-child {
+    border-bottom: none;
+}
+
+.embarcacion-label {
+    font-weight: 500;
+}
+
+.embarcacion-value {
+    font-weight: 300;
+    text-align: right;
+}
+.area-box strong {
+    font-size: 1rem;
+}
+
+        /* Ajuste del main por el header fijo */
+        .reglamento-main {
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+        
+
+        /* Índice interactivo */
+        .reglamento-indice {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            border: 1px solid #e0e0e0;
+            padding: 20px 25px;
+            border-radius: 6px;
+            background-color: #fafafa;
+        }
+
+        .reglamento-indice h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 15px;
+            border: none;
+            padding: 0;
+        }
+
+        .reglamento-indice ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .reglamento-indice li {
+            margin-bottom: 6px;
+        }
+
+        .indice-item-simple a {
+            font-size: 0.9rem;
+            font-weight: 400;      /* menos marcado */
+            text-decoration: none;
+            color: #333;
+            opacity: 0.8;
+        }
+
+        .indice-item-simple a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .indice-seccion {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .indice-sub a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: #111;
+        }
+
+        .indice-sub a:hover {
+            text-decoration: underline;
+        }
+
+        .reglamento-indice ul ul {
+            margin-left: 18px;
+            margin-top: 4px;
+        }
+
+        .reglamento-indice ul ul ul {
+            margin-left: 16px;
+        }
+
+        .reglamento-indice a {
+            cursor: pointer;
+        }
+
+        /* Contenido de secciones */
+        .reglamento-section {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .reglamento-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .reglamento-section h3 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .reglamento-section h4 {
+            font-size: 1rem;
+            margin-top: 12px;
+            margin-bottom: 4px;
+        }
+
+        .reglamento-section p {
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+        .jarcia-box {
+    border: 1px solid #000;
+    padding: 12px 16px;
+    margin: 15px auto 25px auto;
+    max-width: 500px;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+}
+
+.jarcia-box-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+}
+
+.jarcia-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.jarcia-row:last-child {
+    border-bottom: none;
+}
+
+.jarcia-label {
+    font-weight: 500;
+}
+
+.jarcia-value {
+    font-weight: 300;
+    text-align: right;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Ro330 CLASS</a>
+        <ul class="nav-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#info">El Barco</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero con bannerR -->
+    <section class="reglamento-hero">
+        <div class="reglamento-hero-content">
+            <h1>Reglamento Ro330</h1>
+        </div>
+    </section>
+
+    <main class="reglamento-main container">
+
+        <!-- Índice interactivo -->
+        <nav class="reglamento-indice">
+            <h2>Índice</h2>
+            <ul>
+                <li class="indice-item-simple">
+                    <a href="#embarcacion">Embarcación</a>
+                </li>
+
+                <li>
+                    <span class="indice-seccion">Aparejo</span>
+                    <ul>
+                        <li class="indice-sub">
+                            <a href="#aparejo-velas">Velas</a>
+                            <ul>
+                                <li><a href="#vela-mayor">Mayor</a></li>
+                                <li><a href="#vela-genova">Génova</a></li>
+                                <li><a href="#vela-spinnaker">Spinnaker</a></li>
+                            </ul>
+                        </li>
+                        <li class="indice-sub">
+                            <a href="#jarcia">Jarcia</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="indice-item-simple">
+                    <a href="#tripulacion">Tripulación</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Secciones de contenido base -->
+
+       <section id="embarcacion" class="reglamento-section">
+    <h2>Embarcación</h2>
+
+    <div class="embarcacion-box">
+        <div class="embarcacion-box-title">Parámetros generales</div>
+
+        <div class="embarcacion-row">
+            <span class="embarcacion-label">Peso</span>
+            <span class="embarcacion-value">[min 3800 kg - max 4500kg]</span>
+        </div>
+
+        <div class="embarcacion-row">
+            <span class="embarcacion-label">Manejo</span>
+            <span class="embarcacion-value">[Rueda o Caña indiferentemente]</span>
+        </div>
+
+        <div class="embarcacion-row">
+            <span class="embarcacion-label">Calado</span>
+            <span class="embarcacion-value">[1.7m max]</span>
+        </div>
+    </div>
+
+    <p>
+        Solamente podran competir los Ro330 edicion SD (Short Draft), dado que la edicion de calado corto es la mas popular.
+        Esta terminantemente prohibido hacer modificaciones en el casco/pala/orza.
+    </p>
+</section>
+
+       <section id="aparejo-velas" class="reglamento-section">
+    <h2>Aparejo</h2>
+
+    <h3>Velas</h3>
+
+    <!-- MAYOR -->
+    <h4 id="vela-mayor">Mayor</h4>
+    <div class="area-box">
+        <strong>Área máxima permitida:</strong> 29 m²
+    </div>
+    <p>
+        Solamente se podra llevar una mayor a bordo de cualquier material y cualquier numero/ tipo de sables.
+    </p>
+
+
+    <!-- GÉNOVA -->
+    <h4 id="vela-genova">Velas de proa</h4>
+    <div class="area-box">
+        <strong>Área máxima permitida:</strong> 30 m²
+    </div>
+    <p>
+        Se podran llevar como máximo dos velas de proa de cualquier material y confeccion. Si se sale con un una vela de proa, se termina la regata con esa misma vela de proa.
+        El uso de enrollador o tuff luff es indiferente.
+    </p>
+
+
+    <!-- SPINNAKER -->
+    <h4 id="vela-spinnaker">Spinnaker</h4>
+    <div class="area-box">
+        <strong>Área máxima permitida:</strong> 68 m²
+    </div>
+    <p>
+        Se podran llevar y usar dos Spinnakers obligatoriamente simetricos de cualquier material.
+    </p>
+
+
+    <!-- JARCIA -->
+    <h3 id="jarcia">Jarcia</h3>
+
+<div class="jarcia-box">
+    <div class="jarcia-box-title">Elementos de jarcia</div>
+
+    <div class="jarcia-row">
+        <span class="jarcia-label">Mástil</span>
+        <span class="jarcia-value">Material unicamente de aluminio, Pmax = 11,6m</span>
+    </div>
+
+    <div class="jarcia-row">
+        <span class="jarcia-label">Tangón</span>
+        <span class="jarcia-value">Aluminio o Carbono, max 3,6m</span>
+    </div>
+
+    <div class="jarcia-row">
+        <span class="jarcia-label">Obenques</span>
+        <span class="jarcia-value">Cable de acero: V1 = Ø8; D1,D2: Ø7.</span>
+    </div>
+</div>
+
+<p>
+    
+</p>
+
+</section>
+
+
+        <section id="tripulacion" class="reglamento-section">
+            <h2>Tripulación</h2>
+            <p>
+                Como maximo se podran llevar 7 tripulantes, sumando asi no mas de 600kg
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>

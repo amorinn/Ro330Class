@@ -1,0 +1,368 @@
+/* --- VARIABLES DE ESTILO (Técnico, claro, B&N) --- */
+:root {
+    --color-fondo: #ffffff;           /* Fondo blanco */
+    --color-texto: #111111;           /* Texto casi negro */
+    --color-primario: #000000;        /* Negro para acentos */
+    --color-fondo-secundario: #f5f5f5;/* Gris muy claro */
+    --font-principal: 'Montserrat', sans-serif;
+}
+
+/* --- RESETEO BÁSICO Y ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* --- BARRA DE NAVEGACIÓN SUPERIOR --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+    border-color: var(--color-primario);
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff; /* Sin foto a pantalla completa */
+    padding: 0 20px;
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-image: url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Fondo estático mientras se hace scroll */
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+/* Oscurecedor más fuerte */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* << más oscuro */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #e6e6e6;
+}
+
+
+
+/* --- CONTENEDOR GENERAL PARA SECCIONES --- */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+/* Fondo alterno para separar secciones */
+.alt-bg {
+    background-color: var(--color-fondo-secundario);
+}
+
+h2 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Estilo de tabla de especificaciones --- */
+.spec-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    border-top: 1px solid #e0e0e0;
+}
+
+.spec-table td {
+    padding: 8px 5px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.spec-table td:first-child {
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.spec-table td:last-child {
+    text-align: right;
+    font-weight: 400;
+    color: #555555;
+}
+
+
+/* --- SECCIÓN SEPARADORA CON BANNER2 --- */
+/* --- SECCIÓN SEPARADORA TRIPLE (SIN RECORTES) --- */
+.banner-separador {
+    display: flex;
+    justify-content: center;   /* centra TODO el conjunto */
+    align-items: center;
+    gap: 0;                    /* SIN separación */
+    margin-top: 80px;          /* separación respecto a la sección superior */
+}
+
+/* Las imágenes: MISMA ALTURA, SIN RECORTE, PEGADAS */
+.banner-separador .banner-img {
+    height: 40vh;              /* MISMA altura para todas */
+    width: auto;               /* mantiene proporción */
+    object-fit: contain;       /* NO se recortan */
+    flex-shrink: 0;            /* evita que se deformen */
+    display: block;
+}
+/* --- ESTILOS PARA EL LAYOUT DE INFO --- */
+.top-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+.layout-image-wrapper {
+    padding: 0;               /* antes había un borde interior que achicaba la imagen */
+    background-color: var(--color-fondo-secundario);
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    height: 100%;
+}
+.layout-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.top-layout-grid .spec-item {
+    margin-top: 0;
+    height: 100%;
+    padding: 25px;
+    border-left: 3px solid var(--color-primario);
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.bottom-full-width-image {
+    margin-top: 60px;
+    padding: 0;
+    background: none;     /* Sin recuadro */
+    border: none;
+    min-height: 0;
+}
+
+.bottom-full-width-image .layout-image {
+    width: 100%;
+    height: auto;
+    max-width: 1600px;      /* MUCHÍSIMO más grande y más definido */
+    margin: 0 auto;
+    display: block;
+}
+
+
+/* --- SECCIÓN REGLAS DE CLASE --- */
+
+
+.reglas-mini {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.reglas-resumen {
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Botón de llamada a la acción (CTA) */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 22px;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid var(--color-primario);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+/* --- SECCIÓN CONTACTO (FORMULARIO) --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    color: var(--color-texto);
+    font-family: var(--font-principal);
+    font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 1px var(--color-primario);
+}
+
+.contact-form button {
+    cursor: pointer;
+}
+
+/* --- FOOTER (PIE DE PÁGINA) --- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+/* --- RESPONSIVE: Para móviles --- */
+@media (max-width: 900px) {
+    .top-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    .layout-image-wrapper,
+    .top-layout-grid .spec-item {
+        margin-bottom: 20px;
+    }
+    .top-layout-grid .spec-item {
+        padding: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
