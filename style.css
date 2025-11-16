@@ -423,3 +423,40 @@ footer {
         flex-shrink: 0;
     }
 }
+@media (max-width: 600px) {
+    /* Tabla de especificaciones en formato "lista" para móvil */
+    .spec-table {
+        width: 100%;
+        border-top: none;
+        border-collapse: collapse;
+    }
+
+    .spec-table tr {
+        display: block;
+        padding: 10px 0;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .spec-table td {
+        display: block;
+        width: 100%;
+        padding: 3px 0;
+        border-bottom: none;
+        text-align: left;
+    }
+
+    .spec-table td:first-child {
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #333;
+    }
+
+    .spec-table td:last-child {
+        font-weight: 400;
+        font-size: 0.95rem;
+        color: #555;
+        text-align: left;   /* importante: que no se alinee a la derecha en móvil */
+    }
+}
