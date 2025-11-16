@@ -424,7 +424,8 @@ footer {
     }
 }
 @media (max-width: 600px) {
-    /* Tabla de especificaciones en formato "lista" para móvil */
+
+    /* Evitar que se amontonen las características del barco en móvil */
     .spec-table {
         width: 100%;
         border-top: none;
@@ -443,6 +444,7 @@ footer {
         padding: 3px 0;
         border-bottom: none;
         text-align: left;
+        word-break: break-word;   /* por si el texto es largo */
     }
 
     .spec-table td:first-child {
@@ -450,13 +452,13 @@ footer {
         font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: #333;
+        color: #333333;
     }
 
     .spec-table td:last-child {
         font-weight: 400;
         font-size: 0.95rem;
-        color: #555;
-        text-align: left;   /* importante: que no se alinee a la derecha en móvil */
+        color: #555555;
+        text-align: left;
     }
 }
