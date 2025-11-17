@@ -741,3 +741,9 @@ footer {
     }
 }
 
+.nav-links a.active {
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 3px;
+    opacity: 1;
+}
+
