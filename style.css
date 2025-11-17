@@ -348,6 +348,10 @@ h2 {
 .contact-form button {
     cursor: pointer;
 }
+html, body {
+    overflow-x: hidden;
+}
+
 
 /* --- FOOTER (PIE DE PÁGINA) --- */
 footer {
@@ -461,3 +465,4 @@ footer {
         text-align: left;
     }
 }
+
