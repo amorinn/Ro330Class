@@ -740,3 +740,286 @@ footer {
         box-sizing: border-box;
     }
 }
+
+/* --- REGLAMENTO: HERO ESPECÍFICO --- */
+.reglamento-hero {
+    background-image: url('../img/bannerR.jpg');
+}
+
+/* --- REGLAMENTO: MAIN --- */
+.reglamento-main {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+/* --- REGLAMENTO: ÍNDICE --- */
+.reglamento-indice {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    border: 1px solid #e0e0e0;
+    padding: 20px 25px;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.reglamento-indice h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 15px;
+    border: none;
+    padding: 0;
+}
+
+.reglamento-indice ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reglamento-indice li {
+    margin-bottom: 6px;
+}
+
+.indice-item-simple a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #333;
+    opacity: 0.8;
+}
+
+.indice-item-simple a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.indice-seccion {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.indice-sub a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #111;
+}
+
+.indice-sub a:hover {
+    text-decoration: underline;
+}
+
+.reglamento-indice ul ul {
+    margin-left: 18px;
+    margin-top: 4px;
+}
+
+.reglamento-indice ul ul ul {
+    margin-left: 16px;
+}
+
+.reglamento-indice a {
+    cursor: pointer;
+}
+
+/* --- REGLAMENTO: SECCIONES --- */
+.reglamento-section {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.reglamento-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.reglamento-section h3 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.reglamento-section h4 {
+    font-size: 1rem;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.reglamento-section p {
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* --- REGLAMENTO: CAJAS EMBARCACIÓN --- */
+.embarcacion-box {
+    border: 1px solid #000;
+    padding: 12px 16px;
+    margin: 15px auto 25px auto;
+    max-width: 500px;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+}
+
+.embarcacion-box-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+}
+
+.embarcacion-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.embarcacion-row:last-child {
+    border-bottom: none;
+}
+
+.embarcacion-label {
+    font-weight: 500;
+}
+
+.embarcacion-value {
+    font-weight: 300;
+    text-align: right;
+}
+
+/* --- REGLAMENTO: ÁREAS VELA --- */
+.area-box {
+    border: 1px solid #000;
+    padding: 10px 15px;
+    margin: 8px 0 18px 0;
+    display: inline-block;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+}
+
+.area-box strong {
+    font-size: 1rem;
+}
+
+/* --- REGLAMENTO: JARCIA --- */
+.jarcia-box {
+    border: 1px solid #000;
+    padding: 12px 16px;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+}
+
+.jarcia-box-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+}
+
+.jarcia-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.jarcia-row:last-child {
+    border-bottom: none;
+}
+
+.jarcia-label {
+    font-weight: 500;
+}
+
+.jarcia-value {
+    font-weight: 300;
+    text-align: right;
+}
+
+/* Layout dos columnas caja + imagen */
+.jarcia-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 25px;
+}
+
+.jarcia-layout .jarcia-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.jarcia-image-wrapper {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #fafafa;
+    padding: 10px;
+    display: flex;
+    align-items: stretch;
+}
+
+.jarcia-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* --- REGLAMENTO: RESPONSIVE --- */
+
+/* Filas de embarcación y jarcia apiladas en móvil */
+@media (max-width: 600px) {
+    .embarcacion-row,
+    .jarcia-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .embarcacion-value,
+    .jarcia-value {
+        text-align: left;
+    }
+}
+
+/* Imagen de jarcia debajo en pantallas estrechas */
+@media (max-width: 850px) {
+    .jarcia-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .jarcia-image {
+        height: auto;
+    }
+}
+
+/* Márgenes laterales en móvil para que el texto no toque los bordes */
+@media (max-width: 768px) {
+    .reglamento-section,
+    .reglamento-indice {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .embarcacion-box,
+    .area-box,
+    .jarcia-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

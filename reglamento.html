@@ -6,8 +6,8 @@
     <title>Reglamento Ro330 Class</title>
 
     <link rel="icon" type="image/png" href="img/icon.png">
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/reglamento.css"> <!-- NUEVA HOJA DE ESTILO -->
 </head>
 
 <body>
@@ -15,6 +15,7 @@
 <header>
     <a href="index.html" class="logo">Ro330 CLASS</a>
 
+    <!-- Botón hamburguesa -->
     <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -29,38 +30,50 @@
     </ul>
 </header>
 
+<!-- Hero con bannerR -->
 <section class="hero reglamento-hero">
     <div class="hero-content">
         <h1>Reglamento Ro330</h1>
+        <p></p>
     </div>
 </section>
 
 <main class="reglamento-main">
 
+    <!-- Texto introductorio antes del índice -->
     <section class="reglamento-section">
         <p>
-            La Clase Ro330 reúne barcos con pequeñas diferencias ...
+           La Clase Ro330 reúne barcos con pequeñas diferencias entre series y configuraciones, por lo que no es posible aplicar un reglamento estrictamente monotipo. Para permitir que la mayoría de unidades existentes puedan competir juntas, la clase adopta normas laxas pero controladas, lo suficientemente amplias como para incluir a todos, pero no tanto como para que aparezcan configuraciones que rompan el equilibrio deportivo. La verificación técnica se simplifica utilizando únicamente el certificado ORC vigente —Club o Internacional— como referencia común para todos los barcos.
         </p>
     </section>
 
+    <!-- Índice interactivo -->
     <nav class="reglamento-indice">
         <h2>Índice</h2>
         <ul>
-            <li class="indice-item-simple"><a href="#embarcacion">Embarcación</a></li>
+            <li class="indice-item-simple">
+                <a href="#embarcacion">Embarcación</a>
+            </li>
 
             <li>
                 <span class="indice-seccion">Aparejo</span>
                 <ul>
-                    <li class="indice-sub"><a href="#aparejo-velas">Velas</a></li>
-                    <li class="indice-sub"><a href="#jarcia">Jarcia</a></li>
+                    <li class="indice-sub">
+                        <a href="#aparejo-velas">Velas</a>
+                    </li>
+                    <li class="indice-sub">
+                        <a href="#jarcia">Jarcia</a>
+                    </li>
                 </ul>
             </li>
 
-            <li class="indice-item-simple"><a href="#tripulacion">Tripulación</a></li>
+            <li class="indice-item-simple">
+                <a href="#tripulacion">Tripulación</a>
+            </li>
         </ul>
     </nav>
 
-    <!-- EMBARCACIÓN -->
+    <!-- Sección Embarcación -->
     <section id="embarcacion" class="reglamento-section">
         <h2>Embarcación</h2>
 
@@ -84,7 +97,10 @@
         </div>
 
         <p>
-            Solamente podrán competir los Ro330 edición SD...
+            Solamente podrán competir los Ro330 edición SD (Short Draft), dado que la versión de calado corto es la más popular.
+            Está terminantemente prohibido realizar modificaciones en casco, pala o orza.
+            La embarcación deberá cumplir los parámetros dictados por la división Cruiser/Racer de ORC y llevar a bordo el material
+            de seguridad exigido por World Sailing para la competición.
         </p>
 
         <div class="embarcacion-box">
@@ -101,87 +117,125 @@
             </div>
 
             <div class="embarcacion-row">
-                <span class="embarcacion-label">Regala</span>
-                <span class="embarcacion-value">Mínimo 3 cm</span>
+                <span class="embarcacion-label">Regala de proa a popa</span>
+                <span class="embarcacion-value">Mínimo 3 cm de altura</span>
             </div>
         </div>
 
         <p>
-            Se tendrá como motor mínimo obligatorio...
+            Se tendra como motor minimo obligatorio es el Volvo Penta MD2020 de 18.5hp que trae de serie. Se usara esa potencia como potencia mínima para la clase.
+            La helice plegable esta permitida de cualquier material, mecanismo y construccion.
         </p>
     </section>
 
-    <!-- APAREJO -->
+    <!-- Sección Aparejo / Velas -->
     <section id="aparejo-velas" class="reglamento-section">
         <h2>Aparejo</h2>
 
         <h3>Velas</h3>
-        <p>Solamente se podrán llevar...</p>
+        <p>
+            Solamente se podrán llevar y usar las velas indicadas a continuación, respetando sus áreas máximas permitidas.
+        </p>
 
-        <h4>Mayor</h4>
-        <div class="area-box"><strong>Área máxima:</strong> 29 m²</div>
+        <!-- Mayor -->
+        <h4 id="vela-mayor">Mayor</h4>
+        <div class="area-box">
+            <strong>Área máxima permitida:</strong> 29 m²
+        </div>
+        <p>
+            Se podrá llevar una única mayor, de cualquier material y con cualquier número o tipo de sables.
+        </p>
 
-        <h4>Velas de proa</h4>
-        <div class="area-box"><strong>Área máxima:</strong> 30 m²</div>
+        <!-- Velas de proa -->
+        <h4 id="vela-genova">Velas de proa</h4>
+        <div class="area-box">
+            <strong>Área máxima permitida:</strong> 30 m²
+        </div>
+        <p>
+            Se podrán llevar como máximo dos velas de proa de cualquier material y confección.
+            Si se sale a la regata con una vela de proa, se deberá finalizar la prueba con esa misma vela.
+            El uso de enrollador o tuff luff es indiferente.
+        </p>
 
-        <h4>Spinnaker</h4>
-        <div class="area-box"><strong>Área máxima:</strong> 68 m²</div>
+        <!-- Spinnaker -->
+        <h4 id="vela-spinnaker">Spinnaker</h4>
+        <div class="area-box">
+            <strong>Área máxima permitida:</strong> 68 m²
+        </div>
+        <p>
+            Se podrán llevar y usar dos spinnakers, obligatoriamente simétricos, de cualquier material.
+        </p>
 
+        <!-- Jarcia -->
         <h2 id="jarcia">Jarcia</h2>
 
         <div class="jarcia-layout">
 
+            <!-- COLUMNA 1: Caja de jarcia -->
             <div class="jarcia-box">
                 <div class="jarcia-box-title">Elementos de jarcia</div>
 
                 <div class="jarcia-row">
                     <span class="jarcia-label">Mástil</span>
-                    <span class="jarcia-value">Aluminio 11,6 m</span>
+                    <span class="jarcia-value">Aluminio, P máx. = 11,6 m</span>
                 </div>
 
                 <div class="jarcia-row">
                     <span class="jarcia-label">Crucetas</span>
-                    <span class="jarcia-value">Dos pisos</span>
+                    <span class="jarcia-value">Dos pisos de crucetas de aluminio</span>
                 </div>
 
                 <div class="jarcia-row">
                     <span class="jarcia-label">Tangón</span>
-                    <span class="jarcia-value">3,6 m</span>
+                    <span class="jarcia-value">Aluminio o carbono, máx. 3,6 m</span>
                 </div>
 
                 <div class="jarcia-row">
                     <span class="jarcia-label">Obenques</span>
-                    <span class="jarcia-value">Cable acero</span>
+                    <span class="jarcia-value">Cable de acero: V1 = Ø8; D1, D2 = Ø7</span>
                 </div>
 
                 <div class="jarcia-row">
                     <span class="jarcia-label">Backstay</span>
-                    <span class="jarcia-value">Trimable</span>
+                    <span class="jarcia-value">Único, central, trimable, de cualquier material</span>
+                </div>
+
+                <div class="jarcia-row">
+                    <span class="jarcia-label">Botavara</span>
+                    <span class="jarcia-value">Indiferente</span>
+                </div>
+
+                <div class="jarcia-row">
+                    <span class="jarcia-label">Trapa</span>
+                    <span class="jarcia-value">Trapa con contra rígida de muelle obligatoria</span>
                 </div>
             </div>
 
+            <!-- COLUMNA 2: Imagen -->
             <div class="jarcia-image-wrapper">
-                <img src="img/aparejo.png" class="jarcia-image" alt="Aparejo Ro330">
+                <img src="img/aparejo.png" alt="Aparejo Ro330" class="jarcia-image">
             </div>
 
         </div>
     </section>
 
-    <!-- TRIPULACIÓN -->
+    <!-- Sección Tripulación -->
     <section id="tripulacion" class="reglamento-section">
         <h2>Tripulación</h2>
         <p>
-            Se podrán embarcar hasta 10 tripulantes...
+            Se podrán embarcar hasta 10 tripulantes, sin superar un peso total de 450 kg.
+            En el caso de competir con 4 personas o menos, el peso máximo será el que dicte la
+            ficha de la embarcación según ORC.
         </p>
     </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2025 Ro330 Class Association.</p>
+    <p>&copy; 2025 Ro330 Class Association. Sin ningun derecho reservado.</p>
+    <p>Diseño conceptual por Anónimo</p>
 </footer>
 
 <script src="js/main.js"></script>
-
 </body>
 </html>
