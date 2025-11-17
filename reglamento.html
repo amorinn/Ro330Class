@@ -5,53 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reglamento Ro330 Class</title>
 
-    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/png" href="img/icon.png">
     <!-- Reutiliza la hoja de estilos principal -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Estilos específicos para reglamento -->
     <style>
         /* Hero específico del reglamento */
-        .reglamento-hero {
-            height: 40vh;
-            min-height: 260px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-image: url('bannerR.jpg'); /* bannerR.jpg debe estar en la misma carpeta */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .reglamento-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 0;
-        }
-
-        .reglamento-hero-content {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-        }
-
-        .reglamento-hero-content h1 {
-            color: #ffffff;
-            font-size: 2.4rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-        }
 
         /* Ajuste del main por el header fijo */
         .reglamento-main {
-            padding-top: 120px;
+            padding-top: 40px;
             padding-bottom: 60px;
         }
 
@@ -311,6 +275,9 @@
                 height: auto;  /* vuelve a su tamaño natural */
             }
         }
+        .reglamento-hero {
+    background-image: url('img/bannerR.jpg'); /* misma ruta que usabas antes */
+}
     </style>
 </head>
 <body>
@@ -318,20 +285,22 @@
     <header>
         <a href="index.html" class="logo">Ro330 CLASS</a>
         <ul class="nav-links">
-            <li><a href="index.html#inicio">Inicio</a></li>
-            <li><a href="index.html#info">El Barco</a></li>
-            <!-- Quitado contacto porque ya no existe en el index -->
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="competicion.html">Competición</a></li>
+            <li><a href="documentacion.html">Documentacion</a></li>
         </ul>
     </header>
 
     <!-- Hero con bannerR -->
-    <section class="reglamento-hero">
-        <div class="reglamento-hero-content">
-            <h1>Reglamento Ro330</h1>
-        </div>
-    </section>
+   <section class="hero reglamento-hero">
+    <div class="hero-content">
+        <h1>Reglamento Ro330</h1>
+        <p></p>
+    </div>
+</section>
 
-    <main class="reglamento-main container">
+    <main class="reglamento-main">
+
 
         <!-- Texto introductorio antes del índice -->
         <section class="reglamento-section">
@@ -507,7 +476,7 @@
 
                 <!-- COLUMNA 2: Imagen -->
                 <div class="jarcia-image-wrapper">
-                    <img src="aparejo.png" alt="Aparejo Ro330" class="jarcia-image">
+                    <img src="img/aparejo.png" alt="Aparejo Ro330" class="jarcia-image">
                 </div>
 
             </div>
