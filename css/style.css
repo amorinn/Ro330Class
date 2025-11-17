@@ -709,3 +709,34 @@ footer {
         pointer-events: auto;
     }
 }
+
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column;   /* 🔥 pasa de horizontal a vertical */
+    }
+
+    .image-row .image-wrapper {
+        width: 100%;
+    }
+
+    .image-row img {
+        height: auto;            /* evitar recorte forzado */
+        margin-bottom: 1rem;     /* separar ligeramente las fotos */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .reglamento-section,
+    .reglamento-indice {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .embarcacion-box,
+    .area-box,
+    .jarcia-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
