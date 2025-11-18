@@ -32,11 +32,14 @@
 
 <main>
 
-    <!-- HERO -->
-    <section class="hero" style="background-image: url('img/bannerC.jpg'); background-position: bottom;">
+  <section class="hero" style="background-image: url('img/bannerC.jpg'); background-position: bottom; position: relative;">
         <div class="hero-content">
             <h1>Competición</h1>
             <p></p>
+        </div>
+
+        <div class="photo-credit hero-photo-credit">
+            Imagen: &copy; Desmarque.es
         </div>
     </section>
 
@@ -86,12 +89,19 @@
 
     <!-- C1 y C2 EN PARALELO -->
 <section class="image-row">
-    <div class="image-wrapper">
+    <figure class="photo-wrapper">
         <img src="img/C1.jpg" alt="Ro330 navegando - imagen 1" loading="lazy">
-    </div>
-    <div class="image-wrapper">
+        <figcaption class="photo-credit">
+            &copy; Maria Muiña
+        </figcaption>
+    </figure>
+
+    <figure class="photo-wrapper">
         <img src="img/C2.jpg" alt="Ro330 navegando - imagen 2" loading="lazy">
-    </div>
+        <figcaption class="photo-credit">
+            &copy; Desmarque.es
+        </figcaption>
+    </figure>
 </section>
 
     <!-- UBICACIÓN -->
@@ -216,16 +226,25 @@
     </section>
 
     <!-- CARTEL DE REGATA -->
- <section class="container">
+<section class="container">
         <div class="section-header">
             <h2>Cartel de Regata</h2>
         </div>        
+        
         <div class="regatta-poster" style="display: flex; justify-content: center; margin-bottom: 40px;">
             
-            <img src="img/cartel.jpg" 
-                 alt="Cartel de la regata" 
-                 loading="lazy" 
-                 style="width: 100%; max-width: 700px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
+            <figure class="photo-wrapper" style="width: 100%; max-width: 700px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                
+                <img src="img/cartel.jpg" 
+                     alt="Cartel de la regata" 
+                     loading="lazy"
+                     style="width: 100%; height: auto; display: block;" />
+                
+                <figcaption class="photo-credit">
+                    &copy; Desmarque.es
+                </figcaption>
+            </figure>
+
         </div>
     </section>
 
