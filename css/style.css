@@ -1,9 +1,13 @@
 /* --- VARIABLES DE ESTILO (Técnico, claro, B&N) --- */
 :root {
-    --color-fondo: #ffffff;           /* Fondo blanco */
-    --color-texto: #111111;           /* Texto casi negro */
-    --color-primario: #000000;        /* Negro para acentos */
-    --color-fondo-secundario: #f5f5f5;/* Gris muy claro */
+    --color-fondo: #ffffff;
+    /* Fondo blanco */
+    --color-texto: #111111;
+    /* Texto casi negro */
+    --color-primario: #000000;
+    /* Negro para acentos */
+    --color-fondo-secundario: #f5f5f5;
+    /* Gris muy claro */
     --font-principal: 'Montserrat', sans-serif;
 }
 
@@ -36,7 +40,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    
+
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid #e0e0e0;
@@ -54,7 +58,8 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    margin-left: auto;   /* 💥 empuja el menú totalmente a la derecha */
+    margin-left: auto;
+    /* 💥 empuja el menú totalmente a la derecha */
 }
 
 
@@ -87,7 +92,8 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #ffffff; /* Sin foto a pantalla completa */
+    background-color: #ffffff;
+    /* Sin foto a pantalla completa */
     padding: 0 20px;
 }
 
@@ -117,7 +123,8 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55); /* << más oscuro */
+    background: rgba(0, 0, 0, 0.55);
+    /* << más oscuro */
     z-index: 0;
 }
 
@@ -214,7 +221,8 @@ h2 {
     margin-top: 80px;
 
     display: flex;
-    justify-content: center;    /* << CENTRA el contenido */
+    justify-content: center;
+    /* << CENTRA el contenido */
 }
 
 /* --- Contenedor interno centrado --- */
@@ -231,22 +239,25 @@ h2 {
     object-fit: contain;
     flex-shrink: 0;
 }
+
 /* --- ESTILOS PARA EL LAYOUT DE INFO --- */
 .top-layout-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr; 
+    grid-template-columns: 1fr 2fr;
     gap: 30px;
     align-items: stretch;
     margin-top: 40px;
 }
 
 .layout-image-wrapper {
-    padding: 0;               /* antes había un borde interior que achicaba la imagen */
+    padding: 0;
+    /* antes había un borde interior que achicaba la imagen */
     background-color: var(--color-fondo-secundario);
     border-radius: 6px;
     border: 1px solid #e0e0e0;
     height: 100%;
 }
+
 .layout-image {
     width: 100%;
     height: 100%;
@@ -267,7 +278,8 @@ h2 {
 .bottom-full-width-image {
     margin-top: 60px;
     padding: 0;
-    background: none;     /* Sin recuadro */
+    background: none;
+    /* Sin recuadro */
     border: none;
     min-height: 0;
 }
@@ -275,7 +287,8 @@ h2 {
 .bottom-full-width-image .layout-image {
     width: 100%;
     height: auto;
-    max-width: 1600px;      /* MUCHÍSIMO más grande y más definido */
+    max-width: 1600px;
+    /* MUCHÍSIMO más grande y más definido */
     margin: 0 auto;
     display: block;
 }
@@ -350,7 +363,9 @@ h2 {
 .contact-form button {
     cursor: pointer;
 }
-html, body {
+
+html,
+body {
     overflow-x: hidden;
 }
 
@@ -371,64 +386,90 @@ footer {
     .top-layout-grid {
         grid-template-columns: 1fr;
     }
+
     .layout-image-wrapper,
     .top-layout-grid .spec-item {
         margin-bottom: 20px;
     }
+
     .top-layout-grid .spec-item {
         padding: 20px;
     }
+
     .hero-content h1 {
         font-size: 2.2rem;
     }
 }
+
 @media (max-width: 768px) {
-    /* Evitar scroll horizontal en móvil */
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    /* Hero más bajo en móvil */
     .hero {
-        height: 60vh;
-        background-attachment: scroll;  /* para evitar problemas en móvil */
-        padding: 0 16px;
-    }
+        /* 1. EVITAR QUE SE ESCONDA DETRÁS DEL HEADER */
+        /* Añadimos margen arriba igual a la altura de tu menú (aprox. 60px-80px) */
+        margin-top: 55px;
 
-    .hero-content h1 {
-        font-size: 2rem;
-        letter-spacing: 0.12em;
-    }
+        /* 2. ESCALADO PROPORCIONAL (SIN RECORTES) */
+        width: 100%;
+        height: auto;
+        /* Dejamos que la altura se calcule sola */
 
-    /* Collage centrado y sin desbordar en móviles */
-    .banner-separador {
-        position: relative;
-        width: 100%;        /* en vez de 100vw */
-        left: 0;
-        right: 0;
-        margin: 40px auto 0 auto;
+        /* IMPORTANTE: Pon aquí la proporción real de tu foto (ej. 16/9, 3/2 o 4/3) */
+        /* Si tu foto es de 1920x1080, usa 16/9. Si es de cámara normal, usa 3/2 */
+        aspect-ratio: 3/2;
+
+        /* Aseguramos que la imagen cubra todo el hueco reservado */
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+        /* Mejor para móviles */
         padding: 0;
-        overflow: hidden;   /* corta cualquier sobrante para que no haya scroll lateral */
+
+        /* Centrado del texto (si lo hay) */
         display: flex;
+        align-items: center;
         justify-content: center;
     }
 
-    .banner-inner {
-        display: flex;
-        flex-direction: column;   /* imágenes una debajo de otra en móvil */
-        align-items: center;
-        gap: 0;
-    }
-
-    .banner-inner .banner-img {
-        width: 100%;
-        max-width: 600px;   /* opcional, para que no se hagan gigantes en pantallas grandes pero estrechas */
-        height: auto;
-        object-fit: contain;
-        flex-shrink: 0;
+    /* Ajuste opcional para que el título no tape demasiado la foto pequeña */
+    .hero-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 }
+
+/* Collage centrado y sin desbordar en móviles */
+.banner-separador {
+    position: relative;
+    width: 100%;
+    /* en vez de 100vw */
+    left: 0;
+    right: 0;
+    margin: 40px auto 0 auto;
+    padding: 0;
+    overflow: hidden;
+    /* corta cualquier sobrante para que no haya scroll lateral */
+    display: flex;
+    justify-content: center;
+}
+
+.banner-inner {
+    display: flex;
+    flex-direction: column;
+    /* imágenes una debajo de otra en móvil */
+    align-items: center;
+    gap: 0;
+}
+
+.banner-inner .banner-img {
+    width: 100%;
+    max-width: 600px;
+    /* opcional, para que no se hagan gigantes en pantallas grandes pero estrechas */
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
 @media (max-width: 600px) {
 
     .spec-table {
@@ -479,38 +520,50 @@ footer {
 
 .image-row .photo-wrapper img {
     width: 100%;
-    height: 400px;       /* ALTURA FIJA: Ajusta este valor a tu gusto (ej. 300px o 500px) */
-    object-fit: cover;   /* MAGIA: Recorta lo que sobre para llenar la caja sin deformar */
-    display: block;      /* Elimina espacios extraños debajo de las imágenes */
+    height: 400px;
+    /* ALTURA FIJA: Ajusta este valor a tu gusto (ej. 300px o 500px) */
+    object-fit: cover;
+    /* MAGIA: Recorta lo que sobre para llenar la caja sin deformar */
+    display: block;
+    /* Elimina espacios extraños debajo de las imágenes */
 }
 
 /* 2. Aseguramos que el contenedor (figure) ocupe el espacio correcto */
 .image-row .photo-wrapper {
-    flex: 1;             /* Hace que ambas ocupen el 50% del ancho disponible */
-    min-width: 300px;    /* Evita que se aplasten demasiado */
+    flex: 1;
+    /* Hace que ambas ocupen el 50% del ancho disponible */
+    min-width: 300px;
+    /* Evita que se aplasten demasiado */
 }
 
 /* 3. Ajuste para móviles (Responsive) */
 @media (max-width: 768px) {
     .image-row {
-        flex-direction: column; /* En móvil una debajo de otra */
+        flex-direction: column;
+        /* En móvil una debajo de otra */
     }
+
     .image-row .photo-wrapper img {
-        height: auto;    /* En móvil dejamos que la altura sea natural */
-        max-height: 300px; /* Pero ponemos un límite por si acaso */
+        height: auto;
+        /* En móvil dejamos que la altura sea natural */
+        max-height: 300px;
+        /* Pero ponemos un límite por si acaso */
     }
 }
+
 .image-break {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 2rem 1rem;
-    background: inherit;                 /* mantiene el color del bloque actual si lo hay */
+    background: inherit;
+    /* mantiene el color del bloque actual si lo hay */
 }
 
 .image-break .image-wrapper {
     width: 100%;
-    max-width: 1100px;                   /* MISMO ancho que .container */
+    max-width: 1100px;
+    /* MISMO ancho que .container */
     margin: 0 auto;
 }
 
@@ -520,7 +573,7 @@ footer {
     display: block;
     border-radius: 8px;
     border: 1px solid #ddd;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Móvil */
@@ -531,11 +584,15 @@ footer {
 }
 
 .intro-grid {
-    max-width: 900px;        /* ancho máximo del bloque */
-    margin: 0 auto;          /* lo centra dentro de .container */
+    max-width: 900px;
+    /* ancho máximo del bloque */
+    margin: 0 auto;
+    /* lo centra dentro de .container */
     display: flex;
-    flex-direction: column;  /* 🔹 uno debajo de otro */
-    gap: 24px;               /* separación entre tarjetas */
+    flex-direction: column;
+    /* 🔹 uno debajo de otro */
+    gap: 24px;
+    /* separación entre tarjetas */
 }
 
 .intro-card {
@@ -544,7 +601,7 @@ footer {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     padding: 20px 18px 24px 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .intro-card h3 {
@@ -571,6 +628,7 @@ footer {
         padding: 18px 14px 22px 14px;
     }
 }
+
 /* --- Hero de la página de documentación: misma base que .hero, solo cambia la imagen --- */
 .docs-hero {
     background-image: url('../img/PlantaAlzadoR.jpg');
@@ -598,8 +656,10 @@ footer {
 
 /* --- Tarjetas individuales de documentación --- */
 .docs-container {
-    margin-top: 40px;      /* 🔹 crea espacio blanco arriba */
-    padding-top: 60px;     /* mantiene tu acolchado interno */
+    margin-top: 40px;
+    /* 🔹 crea espacio blanco arriba */
+    padding-top: 60px;
+    /* mantiene tu acolchado interno */
     padding-bottom: 60px;
 }
 
@@ -608,7 +668,8 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;   /* 🔹 una debajo de otra */
+    flex-direction: column;
+    /* 🔹 una debajo de otra */
     gap: 28px;
 }
 
@@ -618,7 +679,7 @@ footer {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     padding: 20px 18px 24px 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .doc-card h3 {
@@ -641,7 +702,8 @@ footer {
 
 
 .nav-toggle {
-    display: none;                 /* se muestra solo en móvil */
+    display: none;
+    /* se muestra solo en móvil */
     background: none;
     border: none;
     cursor: pointer;
@@ -662,9 +724,11 @@ footer {
 .nav-toggle.is-open .hamburger-line:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
 }
+
 .nav-toggle.is-open .hamburger-line:nth-child(2) {
     opacity: 0;
 }
+
 .nav-toggle.is-open .hamburger-line:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
 }
@@ -682,7 +746,8 @@ footer {
 
     .nav-links {
         position: fixed;
-        top: 60px;              /* debajo del header fijo */
+        top: 60px;
+        /* debajo del header fijo */
         right: 0;
         width: 70%;
         max-width: 260px;
@@ -693,7 +758,7 @@ footer {
         padding: 18px 20px;
         gap: 12px;
 
-        box-shadow: -4px 0 15px rgba(0,0,0,0.12);
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.12);
         border-left: 1px solid #e0e0e0;
 
         transform: translateX(100%);
@@ -720,7 +785,8 @@ footer {
 
 @media (max-width: 768px) {
     .image-row {
-        flex-direction: column;   /* 🔥 pasa de horizontal a vertical */
+        flex-direction: column;
+        /* 🔥 pasa de horizontal a vertical */
     }
 
     .image-row .image-wrapper {
@@ -728,13 +794,16 @@ footer {
     }
 
     .image-row img {
-        height: auto;            /* evitar recorte forzado */
-        margin-bottom: 1rem;     /* separar ligeramente las fotos */
+        height: auto;
+        /* evitar recorte forzado */
+        margin-bottom: 1rem;
+        /* separar ligeramente las fotos */
     }
 }
 
 
 @media (max-width: 768px) {
+
     .reglamento-section,
     .reglamento-indice {
         padding-left: 20px;
@@ -758,10 +827,13 @@ footer {
 
 
 .photo-wrapper {
-    position: relative; /* Necesario para que el texto flote dentro */
-    display: block;     /* O inline-block si prefieres */
+    position: relative;
+    /* Necesario para que el texto flote dentro */
+    display: block;
+    /* O inline-block si prefieres */
     width: 100%;
-    overflow: hidden;   /* Por si usamos bordes redondeados */
+    overflow: hidden;
+    /* Por si usamos bordes redondeados */
 }
 
 /* La imagen dentro del wrapper */
@@ -773,45 +845,61 @@ footer {
 
 /* La etiqueta del crédito (Copyright) */
 .photo-credit {
-    display: block;              /* Se comporta como un bloque de texto normal */
-    position: static;            /* Ya no flota sobre la foto */
-    
-    text-align: right;           /* Alineado a la derecha */
-    margin-top: 4px;             /* "Pegado" a la foto (solo 4px de separación) */
-    
-    color: #000000;              /* Color Negro */
-    text-shadow: none;           /* Sin sombra, ya no hace falta */
-    
+    display: block;
+    /* Se comporta como un bloque de texto normal */
+    position: static;
+    /* Ya no flota sobre la foto */
+
+    text-align: right;
+    /* Alineado a la derecha */
+    margin-top: 4px;
+    /* "Pegado" a la foto (solo 4px de separación) */
+
+    color: #000000;
+    /* Color Negro */
+    text-shadow: none;
+    /* Sin sombra, ya no hace falta */
+
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;            /* Peso medio para que se lea bien */
-    font-size: 0.7rem;           /* Tamaño discreto */
+    font-weight: 500;
+    /* Peso medio para que se lea bien */
+    font-size: 0.7rem;
+    /* Tamaño discreto */
     letter-spacing: 0.5px;
 }
 
 /* --- EXCEPCIÓN PARA EL HERO (Banner Principal) --- */
 /* El del Hero DEBE seguir flotando y siendo blanco para verse sobre la foto de fondo */
 .hero-photo-credit {
-    position: absolute;          /* Volvemos a flotar solo este */
-    top: 100px;                  /* Debajo del menú */
+    position: absolute;
+    /* Volvemos a flotar solo este */
+    top: 100px;
+    /* Debajo del menú */
     right: 20px;
     margin-top: 0;
-    
-    color: #ffffff;              /* Blanco */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); /* Con sombra */
+
+    color: #ffffff;
+    /* Blanco */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    /* Con sombra */
     z-index: 10;
     pointer-events: none;
 }
 
 .banner-inner .banner-item {
     display: flex;
-    flex-direction: column; /* Foto arriba, texto abajo */
-    margin: 0 5px; /* Un pequeño espacio entre fotos si quieres */
+    flex-direction: column;
+    /* Foto arriba, texto abajo */
+    margin: 0 5px;
+    /* Un pequeño espacio entre fotos si quieres */
 }
 
 /* 2. Ajustamos la imagen para que respete el tamaño */
 .banner-inner .banner-item .banner-img {
-    height: 40vh;        /* Mantenemos la altura que tenías definida */
-    width: auto;         /* El ancho se ajusta solo */
+    height: 40vh;
+    /* Mantenemos la altura que tenías definida */
+    width: auto;
+    /* El ancho se ajusta solo */
     object-fit: cover;
     display: block;
 }
@@ -823,7 +911,7 @@ footer {
         width: 100%;
         max-width: 600px;
     }
-    
+
     /* En móvil, añadimos un poco de margen abajo del crédito */
     .banner-inner .banner-item {
         margin-bottom: 20px;
